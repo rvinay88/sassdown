@@ -1,65 +1,89 @@
-/* Resetting */
-* { margin: 0; padding: 0; border: 0; font-size: inherit; }
-html { background: #e2e5dc }
-html, body { font-size: 100%; }
+.sassdown {
+  background: #fff; 
+}
 
-/* Typography */
-body {
-  font: 14px/25px 'Calibri', Arial, sans-serif;
+.sassdown body {
+  font: 14px/22px Arial, sans-serif;
   color: black;
   padding: 2em;
 }
-a { text-decoration: none; color: black; }
-h1, h2, h3, h4, ul, ol, dl, p, blockquote {
+
+.sassdown a {
+  text-decoration: none;
+  color: black;
+}
+
+.sassdown h1, .sassdown h2, .sassdown h3, .sassdown h4, .sassdown ul, .sassdown ol, .sassdown dl, .sassdown p, .sassdown blockquote {
   margin-bottom: 15px;
 }
-h1, h2, h3, h4, dt {
+
+.sassdown h1, .sassdown h2, .sassdown h3, .sassdown h4, .sassdown dt {
   font-weight: bold;
 }
-h1 { font-size: 25px; }
-h2 { font-size: 21px; }
-h3 { font-size: 17px; }
-h4 { font-size: 14px; }
-ul, ol { margin-left: 1em; list-style-position: outside; }
 
-/* Layout */
-.gutter {
+.sassdown h1 {
+  font-size: 25px;
+}
+
+.sassdown h2 {
+  font-size: 21px;
+}
+
+.sassdown h3 {
+  font-size: 17px;
+}
+
+.sassdown h4 {
+  font-size: 14px;
+}
+
+.sassdown ul, .sassdown ol {
+  margin-left: 0.5em;
+  list-style-position: outside;
+}
+
+.sassdown .gutter {
   width: 100%;
-  max-width: 960px;
+  max-width: 1200px;
   overflow: hidden;
   margin: 0 auto;
 }
-#nav {
+
+.sassdown #nav {
   float: left;
   width: 20%;
   min-width: 150px;
   margin-right: 25px;
 }
-#content {
+
+.sassdown #content {
   overflow: hidden;
   min-width: 400px;
 }
 
-/* Navigation */
-#nav {
+.sassdown #nav {
   margin-bottom: 25px;
 }
-#nav ul,
-#nav li,
-#nav a {
+
+.sassdown #nav ul,
+.sassdown #nav li,
+.sassdown #nav a {
   display: block;
 }
-#nav ul {
+
+.sassdown #nav ul {
   list-style: none;
   margin: 0 0 1em;
 }
-#nav h1 {
+
+.sassdown #nav h1 {
   border-bottom: 1px solid #d0d5c5;
   font-size: 14px;
   padding-bottom: 10px;
   margin: 20px 0 10px;
 }
-#nav .heading {
+
+.sassdown #nav .heading {
   margin-top: 1em;
   text-transform: uppercase;
   font-size: 12px;
@@ -69,87 +93,112 @@ ul, ol { margin-left: 1em; list-style-position: outside; }
   position: relative;
   border-radius: 4px;
 }
-#nav .heading:hover {
-  background: #d0d5c5;
+
+.sassdown #nav .heading:hover {
+  text-decoration: underline;
 }
-#nav .heading:after {
+
+.sassdown #nav .heading:after {
   content: "+";
   position: absolute;
   top: 2px;
   right: 5px;
 }
-#nav .heading.is-open:after {
+
+.sassdown #nav .heading.is-open:after {
   content: "-";
 }
-#nav ul ul,
-#nav ul .heading {
-  margin-left: 20px;
+
+.sassdown #nav ul ul,
+.sassdown #nav ul .heading {
+  margin-left: 10px;
 }
-#nav a {
+
+.sassdown #nav a {
   padding: 2px 5px;
   border-radius: 4px;
 }
-#nav a:hover,
-#nav a:focus {
-  background: #d0d5c5;
-}
-#nav ul { display: none; }
-#nav ul.is-open { display: block; }
 
-/* Sections */
-.section {
-  background: #fff;
-  box-shadow: 0 2px 3px rgba(0,0,0,0.2);
-  margin-bottom: 20px;
+.sassdown #nav a:hover,
+.sassdown #nav a:focus {
+  text-decoration: underline;
 }
-.section .comment {
+
+.sassdown #nav ul {
+  display: none;
+}
+
+.sassdown #nav ul.is-open {
+  display: block;
+}
+
+.sassdown .section {
+  background: #fafafa;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.sassdown .section .comment {
   padding: 20px 20px 5px;
 }
-.section .result {
+
+.sassdown .section .result {
   padding: 0 20px 20px;
 }
-.section .result iframe {
+
+.sassdown .section .result iframe {
   display: block;
   overflow: hidden;
   position: relative;
   width: 100%;
 }
-.section .markup,
-.section .styles {
+
+.sassdown .section .markup,
+.sassdown .section .styles {
   border-top: 1px solid #ddd;
   background: #f7f7f7;
   position: relative;
   overflow-y: auto;
   max-height: 500px;
 }
-.section .markup pre,
-.section .styles pre {
+
+.sassdown .section .markup pre,
+.sassdown .section .styles pre {
   padding: 0 20px 20px;
 }
-.section .markup:before,
-.section .styles:before {
+
+.sassdown .section .markup:before,
+.sassdown .section .styles:before {
   display: block;
   background: #eee;
-  color: #ccc;
+  color: #666;
   padding: 0 20px;
   position: absolute;
   top: 0px;
   right: 0px;
   border-radius: 0 0 0 4px;
 }
-.section .markup:before { content: "Markup"; }
-.section .styles:before { content: "Styles"; }
 
-/* Code */
-.section .comment code {
+.sassdown .section .markup:before {
+  content: "Markup";
+}
+
+.sassdown .section .styles:before {
+  content: "Styles";
+}
+
+.sassdown .section .comment code {
   color: #3fbead;
   font-family: Consolas, Monaco, 'Andale Mono', monospace;
-  font-size: 13px;
+  font-size: 14px;
 }
-code,
-pre {
+
+.sassdown code,
+.sassdown pre {
   font-family: Consolas, Monaco, 'Andale Mono', monospace;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 20px;
   direction: ltr;
   text-align: left;

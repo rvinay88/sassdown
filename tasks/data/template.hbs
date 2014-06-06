@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="sassdown">
 <head>
     <meta charset="utf-8" />
     <title>{{page.title}}</title>
+    {{> assets}}
 </head>
 <body>
 <div class="gutter">
-
     <div id="nav">
         <h1><a href="{{> root}}/{{href}}">Styleguide</a></h1>
         {{#each pages}}
@@ -55,28 +55,7 @@
                 {{/if}}
                 {{#if result}}
                     <div class="result">
-                        <iframe id="iframe{{@index}}" height="0" src="about:blank"></iframe>
-                        <script id="result{{@index}}" type="text/html">{{{result}}}</script>
-                        <script id="script{{@index}}">
-                            var iframe  = document.getElementById('iframe{{@index}}');
-                            var script  = document.getElementById('script{{@index}}');
-                            var result  = document.getElementById('result{{@index}}');
-                            var context = iframe.contentWindow.document;
-                                context.open();
-                                context.write('<!DOCTYPE html>');
-                                context.write('<'+'html>');
-                                context.write('    <'+'head>');
-                                context.write('        {{> assets}}');
-                                context.write('    <'+'/'+'head>');
-                                context.write('    <'+'body>');
-                                context.write(result.innerHTML);
-                                context.write('    <'+'/'+'body>');
-                                context.write('<'+'/'+'html>');
-                                context.close();
-                            iframe.removeAttribute('id')
-                            result.parentNode.removeChild(result);
-                            script.parentNode.removeChild(script);
-                        </script>
+                        {{{result}}}
                     </div>
                 {{/if}}
                 {{#if markup}}
@@ -105,7 +84,8 @@
             var links = list.querySelectorAll('a');
 
             for ( var j = 0; j < links.length; j++ ){
-                if ( links[j].href.match('/{{page.href}}') ) {
+                var a = window.location.pathname.split("/"); var b = a[a.length - 1]; var c = b.split("."); 
+                if ( links[j].href.match(c[0]) ) {
                     links[j].classList.toggle('is-active');
                     links[j].parentNode.parentNode.classList.toggle('is-open');
                     links[j].parentNode.parentNode.previousElementSibling.classList.toggle('is-open');
