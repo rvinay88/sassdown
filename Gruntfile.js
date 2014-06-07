@@ -38,11 +38,12 @@ module.exports = function(grunt) {
                     assets: [
                         'test/example/assets/css/*.css',
                         'test/example/assets/js/*.js',
+                        'http://fonts.googleapis.com/css?family=Open+Sans:400,300,700'
                     ],
                     readme: 'test/example/assets/sass/readme.md',
                     //theme: 'test/theme.css',
                     //template: 'test/template.hbs'
-                    //highlight: 'github'
+                    highlight: 'monokai'
                 },
                 files: [{
                     expand: true,
@@ -58,8 +59,9 @@ module.exports = function(grunt) {
                     ],
                     excludeMissing: true,
                     readme: false,
-                    commentStart: /\/\* (?:[=]{4,}\n[ ]+|(?!\n))/,
-                    commentEnd: /[ ]+[=]{4,} \*\//
+                    commentStart: /\/\*\*/,
+                    commentEnd: /\*\*\//,
+                    highlight: 'monokai'
                 },
                 files: [{
                     expand: true,
